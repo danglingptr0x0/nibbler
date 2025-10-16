@@ -27,6 +27,9 @@ local function parse_number(word)
 end
 
 local function to_binary(number)
+    if number == 0 then
+        return '0b0'
+    end
     local binary = ""
     while number > 0 do
         binary = (number % 2) .. binary
@@ -77,7 +80,7 @@ local function display_decimal_representation()
         local cursor_pos = api.nvim_win_get_cursor(0)
         local row, _ = cursor_pos[1] - 1, cursor_pos[2]
         clear_virtual_text()
-        api.nvim_buf_set_virtual_text(0, ns_id, row, { { tostring(number), 'Comment' } }, {})
+        api.nvim_buf_set_virtual_text(0, ns_id, row, { { to_binary(number), 'Comment' } }, {})
     else
         clear_virtual_text()
     end
@@ -221,7 +224,7 @@ function M.setup(opts)
     })
     api.nvim_create_user_command("NibblerToggleDisplay", toggle_real_time_display, {
         nargs = '?',
-        desc = "Toggle virtual text showing decimal value of hex or bin number"
+        desc = "Toggle virtual text showing binary value of hex or dec number"
     })
     api.nvim_create_user_command("NibblerHexStringToCArray", hexstring_to_c_arrray, {
         range = true,
