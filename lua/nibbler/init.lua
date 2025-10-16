@@ -35,7 +35,7 @@ local function to_binary(number)
         binary = (number % 2) .. binary
         number = math.floor(number / 2)
     end
-    return '0b' .. binary
+    return binary
 end
 
 local function convert_number_to_base(number, base)
