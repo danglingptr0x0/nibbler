@@ -17,7 +17,7 @@ needs of embedded programming.
 - Convert a number to its decimal representation
 - Convert a number to its hexadecimal representation
 - Toggle between binary, decimal, and hexadecimal representations
-- Diplay the decimal representation of a hexadecimal or binary number as virtual text
+- Diplay the binary representation of a hexadecimal or decimal number as virtual text
 - Convert a hexadecimal string to a C-style array
 
 ## Installation & Configuration
@@ -47,6 +47,6 @@ Have the cursor over a number an call one of the following commands:
 | NibblerToBin             | Convert number under cursor/highlighted to binary                   |
 | NibblerToDec             | Convert number under cursor/highlighted to decimal                  |
 | NibblerToggle            | Toggle between binary, decimal, and hexadecimal                     |
-| NibblerToggleDisplay     | Toggle virtual text showing decimal value of hex or bin number      |
+| NibblerToggleDisplay     | Toggle virtual text showing binary value of hex or dec number      |
 | NibblerToCArray          | Convert number under cursor/highlighted to a C-Style array of bytes |
 | NibblerHexStringToCArray | Convert a hexadecimal string to a C-style array of bytes            |
